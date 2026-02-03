@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- INTERNET permission required ONLY for favicon fetching from Google's service -->
+    <!-- All credential data remains 100% offline - no network sync -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    
+    <application
+        android:name=".VaultApplication"
+        android:allowBackup="false"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.VaultApp"
+        android:usesCleartextTraffic="false"
+        tools:targetApi="35">
+
+        <!-- Security: Prevent screenshots and screen recording -->
+        <!-- FLAG_SECURE is set programmatically in MainActivity -->
+        
+        <!-- Security: Disable auto-fill to prevent credential leakage -->
+        <meta-data
+            android:name="android.autofill"
+            android:value="false" />
+
+        <!-- Main Activity - Single activity architecture with Compose -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation">
+            
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            <!-- Handle vault.enc file imports -->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="application/octet-stream" />
+                <data android:pathPattern=".*\\.enc" />
+            </intent-filter>
+
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:scheme="content" />
+                <data android:mimeType="*/*" />
+                <data android:pathPattern=".*\\.enc" />
+            </intent-filter>
+        </activity>
+
+        <!-- Note: ScreenOffReceiver is registered programmatically in MainActivity -->
+        <!-- SCREEN_OFF is a protected broadcast on Android 8+ and must be registered dynamically -->
+
+    </application>
+
+</manifest>
