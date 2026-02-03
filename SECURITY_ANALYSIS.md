@@ -572,29 +572,29 @@ and recovery. Write it down and store it safely!"
 
 ```mermaid
 flowchart TD
-    SP["Seed Passphrase<br/>(User Memory)"]
-    PBKDF2["PBKDF2<br/>310k iterations"]
-    KEK_P["KEK (Passphrase)<br/>256-bit"]
+    SP("Seed Passphrase<br/>User Memory")
+    PBKDF2("PBKDF2<br/>310k iterations")
+    KEK_P("KEK Passphrase<br/>256 bit")
 
     SP --> PBKDF2 --> KEK_P
 
-    KEK_P -->|Wrap| W_DEK_P["Wrapped DEK<br/>(Passphrase)<br/>Stored"]
-    KEK_P -->|Unwrap<br/>(export / import only)| DEK["DEK<br/>256-bit<br/>Memory Only"]
+    KEK_P -->|Wrap| W_DEK_P("Wrapped DEK<br/>Passphrase<br/>Stored")
+    KEK_P -->|Unwrap export or import only| DEK("DEK<br/>256 bit<br/>Memory only")
 
-    DK["Device KEK<br/>(Keystore / Hardware)"]
-    W_DEK_D["Wrapped DEK<br/>(Device)<br/>Stored"]
+    DK("Device KEK<br/>Keystore hardware")
+    W_DEK_D("Wrapped DEK<br/>Device<br/>Stored")
 
-    DK -->|Unwrap<br/>(daily use)| DEK
+    DK -->|Unwrap daily use| DEK
     DEK -->|Wrap| W_DEK_D
 
-    %% subtle github-style tweaks
-    classDef memory fill:#f8fafc,stroke:#94a3b8,stroke-width:1px
-    classDef stored fill:#ffffff,stroke:#64748b,stroke-dasharray:4 2
-    classDef key fill:#ffffff,stroke:#0f172a,stroke-width:1.2px
-
-    class SP,DEK memory
-    class W_DEK_P,W_DEK_D stored
-    class KEK_P,DK key
+    %% rounded, no background
+    style SP fill:none,rx:10,ry:10
+    style PBKDF2 fill:none,rx:10,ry:10
+    style KEK_P fill:none,rx:10,ry:10
+    style W_DEK_P fill:none,stroke-dasharray:4 2,rx:10,ry:10
+    style W_DEK_D fill:none,stroke-dasharray:4 2,rx:10,ry:10
+    style DEK fill:none,rx:10,ry:10
+    style DK fill:none,rx:10,ry:10
 
 ```
 
@@ -751,19 +751,15 @@ suspend fun clearDek() {
 
 ```mermaid
 flowchart TD
-    ZIP["vault-YYYYMMDD-HHMMSS.zip"]
+    ZIP("vault-YYYYMMDD-HHMMSS.zip")
 
-    ZIP --> ENC["vault.enc<br/>(Encrypted container)<br/>VLT1 format"]
-    ZIP --> META["metadata.json<br/>(Unencrypted metadata)<br/>Stats only"]
+    ZIP --> ENC("vault.enc<br/>Encrypted container<br/>VLT1 format")
+    ZIP --> META("metadata.json<br/>Unencrypted metadata<br/>Stats only")
 
-    %% subtle github-style look
-    classDef container fill:#ffffff,stroke:#0f172a,stroke-width:1.2px
-    classDef encrypted fill:#ffffff,stroke:#475569,stroke-dasharray:4 2
-    classDef meta fill:#f8fafc,stroke:#94a3b8,stroke-width:1px
+    style ZIP fill:none,rx:10,ry:10
+    style ENC fill:none,stroke-dasharray:4 2,rx:10,ry:10
+    style META fill:none,rx:10,ry:10
 
-    class ZIP container
-    class ENC encrypted
-    class META meta
 
 ```
 
