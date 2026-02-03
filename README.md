@@ -16,8 +16,6 @@
 
 Vault is a fully offline, security-focused credential manager built with modern Android development practices. Designed for users who prioritize privacy and data sovereignty, it operates entirely on-device without any cloud synchronization, telemetry, or external network calls. All sensitive data is encrypted using industry-standard AES-256-GCM encryption, with cryptographic keys protected by Android Keystore and user-defined passphrases. The application supports multiple credential types including standard accounts, social media profiles, cryptocurrency wallets, and Google accounts with comprehensive field support.
 
----
-
 ## Features
 
 ### Security & Encryption
@@ -258,17 +256,69 @@ Install directly to connected device:
 
 ### Production Build
 
-Build a release APK with ProGuard optimization:
+Build a release APK with ProGuard optimization using the automated build scripts:
+
+#### Using Build Scripts (Recommended)
+
+**Windows (PowerShell):**
+
+```powershell
+# First time setup - Generate keystore
+.\build_prod.ps1 -GenerateKeystore
+
+# Build release APK
+.\build_prod.ps1 -BuildRelease
+
+# Clean and build
+.\build_prod.ps1 -Clean -BuildRelease
+
+# Show help
+.\build_prod.ps1 -Help
+```
+
+**Linux/macOS (Bash):**
+
+```bash
+# Make script executable (first time only)
+chmod +x build_prod.sh
+
+# First time setup - Generate keystore
+./build_prod.sh --generate-keystore
+
+# Build release APK
+./build_prod.sh --release
+
+# Clean and build
+./build_prod.sh --clean --release
+
+# Show help
+./build_prod.sh --help
+```
+
+The build scripts will:
+
+- Guide you through keystore generation with interactive prompts
+- Create `keystore.properties` with signing credentials (auto-ignored by git)
+- Build signed release APK with proper configuration
+- Display APK size and location after successful build
+
+**Output location:** `app/build/outputs/apk/release/app-release.apk`
+
+#### Manual Method
+
+If you prefer to configure signing manually:
 
 ```bash
 # Create signing key (first time only)
 keytool -genkey -v -keystore vault-release.jks -keyalg RSA -keysize 2048 -validity 10000 -alias vault
 
-# Configure signing in local.properties (do not commit!)
-echo "RELEASE_STORE_FILE=vault-release.jks" >> local.properties
-echo "RELEASE_STORE_PASSWORD=your_password" >> local.properties
-echo "RELEASE_KEY_ALIAS=vault" >> local.properties
-echo "RELEASE_KEY_PASSWORD=your_password" >> local.properties
+# Create keystore.properties file
+cat > keystore.properties << EOF
+storeFile=vault-release.jks
+storePassword=your_password
+keyAlias=vault
+keyPassword=your_password
+EOF
 
 # Build release APK
 ./gradlew assembleRelease
@@ -276,6 +326,8 @@ echo "RELEASE_KEY_PASSWORD=your_password" >> local.properties
 # Output location
 # app/build/outputs/apk/release/app-release.apk
 ```
+
+**Important:** Never commit `keystore.properties` or `vault-release.jks` to version control. These files are already in `.gitignore`.
 
 ### Build Variants
 
@@ -366,30 +418,12 @@ vault-native/
 
 ---
 
-## Contributing
-
-Contributions are welcome! Please follow these guidelines:
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
 ### Code Style
 
 - Follow [Kotlin Coding Conventions](https://kotlinlang.org/docs/coding-conventions.html)
 - Use meaningful commit messages
 - Add KDoc comments for public APIs
 - Write unit tests for new functionality
-
----
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
 
 ## Acknowledgments
 
@@ -398,7 +432,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - [jBCrypt](https://www.mindrot.org/projects/jBCrypt/) - BCrypt implementation for Java
 - [Material Design 3](https://m3.material.io/) - Design system
 
----
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 <div align="center">
 
