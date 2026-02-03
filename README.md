@@ -18,6 +18,10 @@ Vault is a fully offline, security-focused credential manager built with modern 
 
 ## Features
 
+## Demo
+
+- [See demo video here](SHOWCASE.md)
+
 ### Security & Encryption
 
 - **AES-256-GCM Encryption** - Military-grade encryption for all stored credentials
