@@ -6,12 +6,11 @@ This document showcases the key features of Vault App through video demonstratio
 
 ## 1. Initial Setup
 
-**Video:** [setup_app.mp4](demo/setup_app.mp4)
-
-https://github.com/user-attachments/assets/setup_app.mp4
+https://github.com/user-attachments/assets/2f10aa53-6f15-49d7-87f1-1f8e01642f88
 
 **Description:**  
 First-time vault creation workflow demonstrating:
+
 - BIP-39 passphrase generation (12-word mnemonic)
 - Passphrase confirmation step
 - 6-digit PIN setup with numeric keypad
@@ -22,12 +21,11 @@ First-time vault creation workflow demonstrating:
 
 ## 2. Adding Platforms
 
-**Video:** [adding_platforms.mp4](demo/adding_platforms.mp4)
-
-https://github.com/user-attachments/assets/adding_platforms.mp4
+https://github.com/user-attachments/assets/2dd44ed7-8044-41bb-929c-1f72837e457c
 
 **Description:**  
 Platform management showing:
+
 - Creating new platforms with name and domain
 - Selecting platform types (Social, Gaming, Email, Work, etc.)
 - Creating custom platform types
@@ -38,12 +36,11 @@ Platform management showing:
 
 ## 3. Adding Credentials
 
-**Video:** [adding_credentials.mp4](demo/adding_credentials.mp4)
-
-https://github.com/user-attachments/assets/adding_credentials.mp4
+https://github.com/user-attachments/assets/556e540a-555c-4413-8eb1-76293287ccf7
 
 **Description:**  
 Credential creation across multiple types:
+
 - Standard credentials (username, password, email)
 - Social media credentials (with 2FA, phone, recovery email)
 - Crypto wallet credentials (address, private key, seed phrase)
@@ -56,12 +53,11 @@ Credential creation across multiple types:
 
 ## 4. Viewing Credentials
 
-**Video:** [view_credential.mp4](demo/view_credential.mp4)
-
-https://github.com/user-attachments/assets/view_credential.mp4
+https://github.com/user-attachments/assets/89525aa3-0f8b-49ec-b0d7-17f069c24a40
 
 **Description:**  
 Secure credential viewing workflow:
+
 - PIN verification with numeric keypad before viewing
 - Optional biometric authentication
 - Displaying encrypted credential fields
@@ -73,12 +69,11 @@ Secure credential viewing workflow:
 
 ## 5. Editing Credentials
 
-**Video:** [editing_credential.mp4](demo/editing_credential.mp4)
-
-https://github.com/user-attachments/assets/editing_credential.mp4
+https://github.com/user-attachments/assets/b8ce3743-4696-4000-98d1-38df664256d9
 
 **Description:**  
 Credential modification features:
+
 - Updating username, password, and other fields
 - Field validation (email format, username sanitization)
 - Password strength meter during edits
@@ -89,12 +84,11 @@ Credential modification features:
 
 ## 6. Deleting Credentials
 
-**Video:** [deleting_credential.mp4](demo/deleting_credential.mp4)
-
-https://github.com/user-attachments/assets/deleting_credential.mp4
+https://github.com/user-attachments/assets/e9355cb2-8caa-4ff9-9036-ba25ac5a2d81
 
 **Description:**  
 Credential deletion with security:
+
 - Delete confirmation dialog
 - PIN verification with numeric keypad
 - Optional biometric confirmation
@@ -104,12 +98,11 @@ Credential deletion with security:
 
 ## 7. Editing Platforms
 
-**Video:** [editing_platform.mp4](demo/editing_platform.mp4)
-
-https://github.com/user-attachments/assets/editing_platform.mp4
+https://github.com/user-attachments/assets/92321edc-bcef-4f0b-891e-3deeb62c0ee3
 
 **Description:**  
 Platform modification with restrictions:
+
 - Updating platform name, domain, and type
 - 24-hour name edit cooldown enforcement
 - Countdown timer display for restricted edits
@@ -120,12 +113,11 @@ Platform modification with restrictions:
 
 ## 8. Deleting Platforms
 
-**Video:** [deleting_platform.mp4](demo/deleting_platform.mp4)
-
-https://github.com/user-attachments/assets/deleting_platform.mp4
+https://github.com/user-attachments/assets/1680c61e-a707-4029-93e8-1ef335b8c783
 
 **Description:**  
 Platform deletion workflow:
+
 - Delete confirmation with credential count warning
 - PIN verification with numeric keypad
 - Optional biometric authentication
@@ -136,12 +128,11 @@ Platform deletion workflow:
 
 ## 9. Dashboard Credential Filters
 
-**Video:** [dashboard_credential_filters.mp4](demo/dashboard_credential_filters.mp4)
-
-https://github.com/user-attachments/assets/dashboard_credential_filters.mp4
+https://github.com/user-attachments/assets/6a731510-a4b2-46a4-8e76-07d6c0d19fff
 
 **Description:**  
 Dashboard filtering and sorting features:
+
 - Search credentials by username, email, or platform name
 - Real-time search with keyword filtering
 - Sort by name, date created, last accessed
@@ -152,12 +143,11 @@ Dashboard filtering and sorting features:
 
 ## 10. Dashboard Platform Filter
 
-**Video:** [dashboard_platform_filter.mp4](demo/dashboard_platform_filter.mp4)
-
-https://github.com/user-attachments/assets/dashboard_platform_filter.mp4
+https://github.com/user-attachments/assets/9643a331-9aef-4be7-8763-e8cf578bfdcf
 
 **Description:**  
 Platform-based credential filtering:
+
 - Filter credentials by specific platform
 - Quick access to platform-specific credentials
 - Combined with search and sort options
@@ -165,31 +155,13 @@ Platform-based credential filtering:
 
 ---
 
-## 11. Platform Multi-Select Filter
+## 11. Exporting Database
 
-**Video:** [dashboard_platform_filter.mp4](demo/dashboard_platform_filter.mp4)
-
-https://github.com/user-attachments/assets/dashboard_platform_filter.mp4
-
-**Description:**  
-Advanced platform type filtering:
-- Multi-select checkbox UI for platform types
-- "All" option to select/deselect all types
-- Filter by default types (Social, Gaming, Email, etc.)
-- Filter by custom user-created types
-- Compact FilterChip layout for easy selection
-- Empty selection = show all platforms
-
----
-
-## 12. Exporting Database
-
-**Video:** [exporting_database.mp4](demo/exporting_database.mp4)
-
-https://github.com/user-attachments/assets/exporting_database.mp4
+https://github.com/user-attachments/assets/d65546cc-014a-4024-89dc-aacd445ece4c
 
 **Description:**  
 Encrypted vault backup creation:
+
 - Passphrase verification before export
 - Generate encrypted ZIP backup with vault.enc
 - Include metadata.json with backup statistics
@@ -201,12 +173,11 @@ Encrypted vault backup creation:
 
 ## 13. Importing Database
 
-**Video:** [importing_database.mp4](demo/importing_database.mp4)
-
-https://github.com/user-attachments/assets/importing_database.mp4
+https://github.com/user-attachments/assets/efab9956-7e60-4485-ab93-0956d886619f
 
 **Description:**  
 Vault restoration from backup:
+
 - File picker for selecting backup ZIP
 - Backup preview with credential count and date
 - Passphrase verification for decryption
@@ -219,6 +190,7 @@ Vault restoration from backup:
 ## Technical Features Demonstrated
 
 ### Security
+
 - ✅ PIN-based authentication with numeric keypad
 - ✅ Biometric authentication (fingerprint/face)
 - ✅ BIP-39 passphrase generation
@@ -227,6 +199,7 @@ Vault restoration from backup:
 - ✅ Auto-lock on screen off and background
 
 ### User Experience
+
 - ✅ Material Design 3 with dark mode
 - ✅ Keyboard-aware layouts with tap-to-dismiss
 - ✅ Real-time search and filtering
@@ -236,6 +209,7 @@ Vault restoration from backup:
 - ✅ Email validation with proper error display
 
 ### Data Management
+
 - ✅ Multiple credential types support
 - ✅ Platform organization with custom types
 - ✅ Encrypted backup export/import
@@ -251,4 +225,4 @@ For more information, visit the [GitHub repository](https://github.com/motebaya/
 
 ---
 
-_All videos recorded on Android device running Vault App v1.0_
+\_All videos recorded on Android device running Vault App v2.1.0
