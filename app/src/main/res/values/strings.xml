@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Vault</string>
+    
+    <!-- Unlock Screen -->
+    <string name="unlock_title">Unlock Vault</string>
+    <string name="unlock_enter_pin">Enter your PIN</string>
+    <string name="unlock_use_biometric">Use Fingerprint</string>
+    <string name="unlock_forgot_pin">Forgot PIN?</string>
+    <string name="unlock_error_wrong_pin">Incorrect PIN</string>
+    <string name="unlock_error_too_many_attempts">Too many attempts. Please wait.</string>
+    
+    <!-- Setup Screen -->
+    <string name="setup_title">Setup Vault</string>
+    <string name="setup_create_passphrase">Create Master Passphrase</string>
+    <string name="setup_confirm_passphrase">Confirm Passphrase</string>
+    <string name="setup_create_pin">Create 6-digit PIN</string>
+    <string name="setup_confirm_pin">Confirm PIN</string>
+    <string name="setup_enable_biometric">Enable Fingerprint Unlock</string>
+    <string name="setup_passphrase_hint">At least 12 characters recommended</string>
+    <string name="setup_passphrase_mismatch">Passphrases do not match</string>
+    <string name="setup_pin_mismatch">PINs do not match</string>
+    <string name="setup_creating_vault">Creating secure vault…</string>
+    
+    <!-- Dashboard -->
+    <string name="dashboard_title">Vault</string>
+    <string name="dashboard_search">Search credentials</string>
+    <string name="dashboard_empty">No credentials yet</string>
+    <string name="dashboard_add_first">Add your first credential</string>
+    
+    <!-- Credential -->
+    <string name="credential_add">Add Credential</string>
+    <string name="credential_edit">Edit Credential</string>
+    <string name="credential_platform">Platform</string>
+    <string name="credential_username">Username</string>
+    <string name="credential_password">Password</string>
+    <string name="credential_notes">Notes</string>
+    <string name="credential_generate_password">Generate Password</string>
+    <string name="credential_show_password">Show Password</string>
+    <string name="credential_hide_password">Hide Password</string>
+    <string name="credential_copy_password">Copy Password</string>
+    <string name="credential_copied">Copied to clipboard</string>
+    <string name="credential_clipboard_cleared">Clipboard cleared</string>
+    
+    <!-- Settings -->
+    <string name="settings_title">Settings</string>
+    <string name="settings_security">Security</string>
+    <string name="settings_change_pin">Change PIN</string>
+    <string name="settings_change_passphrase">Change Master Passphrase</string>
+    <string name="settings_biometric">Biometric Unlock</string>
+    <string name="settings_auto_lock">Auto-lock Timeout</string>
+    <string name="settings_backup">Backup &amp; Restore</string>
+    <string name="settings_export_vault">Export Vault</string>
+    <string name="settings_import_vault">Import Vault</string>
+    <string name="settings_about">About</string>
+    <string name="settings_version">Version</string>
+    
+    <!-- Import/Export -->
+    <string name="export_title">Export Vault</string>
+    <string name="export_enter_passphrase">Enter your master passphrase to export</string>
+    <string name="export_success">Vault exported successfully</string>
+    <string name="export_error">Failed to export vault</string>
+    <string name="import_title">Import Vault</string>
+    <string name="import_enter_passphrase">Enter the passphrase for this vault</string>
+    <string name="import_success">Vault imported successfully</string>
+    <string name="import_error">Failed to import vault</string>
+    <string name="import_wrong_passphrase">Incorrect passphrase</string>
+    
+    <!-- Errors -->
+    <string name="error_generic">Something went wrong</string>
+    <string name="error_biometric_not_available">Biometric authentication not available</string>
+    <string name="error_biometric_not_enrolled">No fingerprints enrolled</string>
+    
+    <!-- Actions -->
+    <string name="action_save">Save</string>
+    <string name="action_cancel">Cancel</string>
+    <string name="action_delete">Delete</string>
+    <string name="action_confirm">Confirm</string>
+    <string name="action_lock">Lock Vault</string>
+</resources>
